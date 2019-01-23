@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="11px" preserveAspectRatio="none" height="10px" viewBox="0 0 11 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>+</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Create-patient-notes" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Create-notes---plan---modify-meds-Copy" transform="translate(-151.000000, -216.000000)" fill="#4C98CF">
+            <g id="medicine-names-in-list-example" transform="translate(10.000000, 107.000000)">
+                <g id="dosage" transform="translate(20.000000, 76.000000)">
+                    <g id="dosage-control" transform="translate(0.000000, 20.000000)">
+                        <g id="add-button" transform="translate(108.000000, 0.000000)">
+                            <polygon id="+" points="16.62 22.96 16.62 19.36 13 19.36 13 16.6 16.62 16.6 16.62 13 19.46 13 19.46 16.6 23.08 16.6 23.08 19.36 19.46 19.36 19.46 22.96"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

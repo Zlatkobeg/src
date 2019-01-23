@@ -1,0 +1,110 @@
+<div class="header_work">
+	<div class="back" (click)="mainFunction['openComponent']('workout_index')"></div>
+	<div class="width1per">
+	</div><div class="rest99per header_txt">Workout Videos</div>
+</div>
+<ion-scroll scrollX="false" scrollY="true">
+	<div class="rel_fvideo" id="for_workout_details">
+		<!-- <video id="workout_video" width="100%" height="auto" preload="auto" *ngIf="mainModel['workout_info']['video_link']" poster="{{mainModel['workout_info']['image']}}">
+			<source src="{{mainModel['workout_info']['video_link']}}" type="video/mp4">
+		</video>
+		<div>
+			<div class="btn_play" (click)="mainFunction['startVideo']($event)"></div>
+			<div class="info_title1">
+				<div class="pad_b5">
+					<div class="five_star_empty">
+						<div class="five_star" [ngStyle]="{'width': mainModel['workout_info']['rating']+'%'}"></div>
+					</div>
+				</div>
+				<div class="white_title_small">{{mainModel['workout_info']['name']}}</div>
+			</div>
+			<div class="abs_like">
+				<div class="rel_circle_small">
+					<div class="width1per">
+					</div><div class="logo_text f_size12 rest99per">OT</div>
+					<div class="circle_like_small">
+						<div class="width1per">
+						</div><div class="rest99per">{{mainModel['workout_info']['like']}}</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
+	</div>
+	<div class="all_details" *ngIf="mainModel['workout_info']">
+		<div class="main_text">Workout details</div>
+		<div>
+			<div class="grey_list_darker">
+				<div class="name_list inline_block">Difficulty:
+				</div><div class="name_value inline_block pad_l5">{{mainModel['workout_info']['dificulty']}}/5</div>
+			</div>
+			<div class="grey_list_light">
+				<div class="name_list inline_block">Equipment:
+				</div><div class="name_value inline_block pad_l5">{{mainModel['workout_info']['equipment']}}</div>
+			</div>
+			<div class="grey_list_darker">
+				<div class="name_list inline_block">Training Type:
+				</div><div class="name_value inline_block pad_l5">{{mainModel['workout_info']['type']}}</div>
+			</div>
+		</div>
+		<div class="main_text">
+			<div class="width35l" *ngIf="mainModel['workout_info']['coments']" >Reviews ({{mainModel['workout_info']['coments'].length}})
+			</div><div class="width65r">
+				<div class="rate_text">Tap to rate
+				</div><div class="inline_middle five_star_empty">
+					<div class="five_star" [ngStyle]="{'width': mainModel['workout_info']['rating']+'%'}"></div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div class="grey_list_darker" [ngStyle]="{'background-color': (i%2 == 1) ? '#f9f9f9' : ''}" *ngFor="let comment of mainModel['workout_info']['coments']; let i = index;">
+				<div class="relative_top_coments">
+					<div class="absl_width35">
+						<div class="width1px">
+						</div><div class="img_radius30"></div>
+					</div>
+					<div class="height100">
+						<div class="width1per">
+						</div><div class="rest99per">
+							<div class="name_comments">{{comment['user']}}</div>
+							<div class="name_time">{{comment['days_ago']}}</div>
+						</div>
+					</div>
+					<div class="absolute_rating">
+						<div class="width1per">
+						</div><div class="rest99per">
+							<div class="five_star_empty">
+								<div class="five_star" [ngStyle]="{'width': comment['rating']+'%'}"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="pad_t5 comments_text">{{comment['value']}}</div>
+				<div class="pad_t10">
+					<div class="left_like">
+						<div class="rest99per like">
+							<div class="width1per">
+							</div><div class="rest99per">{{comment['like']}}</div>
+						</div>
+					</div>
+					<div class="right_comments">
+						<div class="rest99per dislike">
+							<div class="width1per">
+							</div><div class="rest99per">0</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="main_text">
+			<div *ngIf="mainModel['workout_info']['related_workout']" >Related Workout ({{mainModel['workout_info']['related_workout'].length}})</div>
+		</div>
+		<div class="relative_related">
+			<div class="abs_related" [ngStyle]="{'width': (mainModel['related_abs_width']) + 'px'}">
+				<div class="fimg_related" *ngFor="let related of mainModel['workout_info']['related_workout']; let i = index" [ngStyle]="{'background-image': 'url('+ ((related.image && related.image != '') ?  related.image : '') + ')'}" (click)="mainFunction['openRelatedWorkout'](related.id)">
+					<div class="abs_name_video">{{related.name}}</div>
+					<div class="abs_name_video1">by {{related.trainer_name}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</ion-scroll>

@@ -1,0 +1,918 @@
+page-recepies {
+
+	.recepies
+	{
+		display: none;
+	}
+	
+	.recepies.active
+	{
+		display: block;
+	}
+		
+	.header_work
+	{
+		position: relative;
+		height: 45px;
+		padding: 0px 80px 0px 45px;
+		
+		box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+	}
+	
+	.all_filter
+	{
+		overflow: auto;
+	}
+	
+	.back
+	{
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		height: 100%;
+		width: 45px;
+		
+		background-image: url(../assets/img/arrow_back.png);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 10px;
+	}	
+		
+	.header_txt
+	{
+		font-size: 14px;
+		color: #000;
+	}
+	
+	.filter_search
+	{
+		display: inline-block;
+		width: 70px;
+		padding: 7px 0px;
+		
+		border: 1px dotted #000;
+		border-radius: 0px 20px 20px 0px;
+		
+		font-size: 13px;
+		font-weight: 600;
+		text-align: center;
+		color: #000;
+		vertical-align: middle;
+	}
+
+	.product_list
+	{
+		position: relative;
+		height: 240px;
+		padding: 8px;
+		
+		background-image: url(../assets/img/trening2.jpg);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+	}
+	
+	.play
+	{
+		display: inline-block;
+		width: 41px;
+		height: 41px;
+		
+		border-radius: 50%;
+		background-color: rgba(0, 0, 0, 0.5);
+		background-image: url(../assets/img/play.png);
+		background-repeat: no-repeat;
+		background-position: 15px center;
+		background-size: 16px;
+		
+		vertical-align: middle;
+	}
+	
+	.info_title
+	{
+		position: absolute;
+		width: 100%;
+		left: 0px;
+		bottom: 0px;
+		padding: 45px 15px 15px;
+		
+		background: linear-gradient(to bottom, transparent, black);
+	}
+	
+	.info_title1
+	{
+		position: absolute;
+		width: 100%;
+		left: 0px;
+		bottom: 0px;
+		padding: 15px;
+		
+		background: linear-gradient(to bottom, transparent, black);
+	}
+	
+	.white_title
+	{
+		color: #fff;
+		font-size: 19px;
+		font-family: Antaro;
+	}
+	
+	.white_title_small
+	{
+		color: #fff;
+		font-size: 14px;
+		font-family: Antaro;
+	}
+	
+	.grey_txt
+	{
+		color: #9e9e9e;
+		font-size: 13px;
+	}
+	
+	.abs_like
+	{
+		position: absolute;
+		right: 26px;
+		bottom: 16px;
+	}
+	
+	
+	.search_product
+	{
+		position: relative;
+		padding: 10px 0px 10px 0px
+	}
+	
+	.drop_from_hpi
+	{
+		position: relative;
+		
+		background-color: #fff;
+		
+		text-align: left;
+		
+		overflow: visible;
+	}
+	
+	.drop_from_hpi.active
+	{
+		right: 0px;
+	}
+	
+	.drHold
+	{
+		position: fixed;
+		right: -400px; 
+		width: 83%;
+		height: 100%;
+		top: 0px;
+		
+		background-color: #fff;
+		
+		box-shadow: 0px 8px 12px 4px rgba(0, 0, 0, 0.5);
+		
+		z-index: 999;
+		
+		transition: right 0.5s;
+	}
+	
+	.top_menuList
+	{
+		position: relative;
+		width: 100%;
+		height: 140px;
+		
+		background-image: url('../assets/img/fitness_couple.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+	}
+	
+	.white_txt
+	{
+		position: absolute;
+		left: 20px;
+		bottom: 17px;
+		
+		font-size: 18px;
+		font-family: 'Dancing Script', cursive;
+		font-weight: bold;
+		color: #fff;
+	}
+	
+	.list_white
+	{
+		font-size: 14px;
+		font-family: Helvetica2;
+	}
+	
+	.inside_list_rel
+	{
+		position: relative;
+		padding: 17px 10px 17px 50px;
+	}
+	
+	.list_grey
+	{
+		background-color: #f1f1f1;
+		font-size: 14px;
+		font-family: Helvetica2;
+	}
+	
+	.image_list
+	{
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		width: 50px;
+		height: 51px;
+		
+		background-image: url('../assets/img/clock.png');
+		background-repeat: no-repeat;
+		background-size: 23px;
+		background-position: center center;
+	}
+	
+	.clock
+	{
+		background-image: url('../assets/img/clock.png');
+		background-size: 23px;
+	}
+	
+	.burn
+	{
+		background-image: url('../assets/img/burn.png');
+		background-size: auto 25px;
+	}
+	
+	.difficulty
+	{
+		background-image: url('../assets/img/difficulty.png');
+		background-size: 23px;
+	}
+	
+	.trainer
+	{
+		background-image: url('../assets/img/trainer.png');
+		background-size: 23px;
+	}
+	
+	.body_focus
+	{
+		background-image: url('../assets/img/body_focus.png');
+		background-size: 23px;
+	}
+	
+	.training_type
+	{
+		background-image: url('../assets/img/training_type.png');
+		background-size: 23px;
+	}
+	
+	.equipment
+	{
+		left: 1px;
+		background-image: url('../assets/img/training_active.png');
+		background-size: 21px;
+	}
+	
+	.drop_open
+	{
+		display: none;
+		padding: 10px 10px 10px 17px;
+	}
+	
+	.drop_open.active
+	{
+		display: block;
+	}
+	
+	.noborder_inp
+	{
+		padding: 10px;
+		width: 100%;
+		
+		background-color: inherit;
+		border: 0px;
+		border-bottom: 1px solid #000;
+		
+		font-size: 13px;
+		font-family: Helvetica3;
+	}
+	
+	.pad_l10
+	{
+		padding-left: 10px;
+	}
+	
+	.checkbox
+	{
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		
+		border: 1px solid #000;
+		border-radius: 3px;
+		vertical-align: middle;
+	}
+	
+	.checkbox.active
+	{
+		background-color: #000;
+		background-image: url('../assets/img/check.png');
+		background-size: 84%;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	
+	.number_txt
+	{
+		display: inline-block;
+		padding-left: 5px;
+		
+		font-size: 13px;
+		font-family: Helvetica3;
+		vertical-align: middle;
+	}
+	
+	.number_txt span
+	{
+		padding-left: 3px;
+		color: #5f5e5e;
+	}
+	
+	.padtb4
+	{
+		padding: 4px 0px;
+	}
+	
+	.drop_from_hpi.active .drHold
+	{
+		transition: right 0.5s; 
+		right: 0px;
+	}
+	
+	.drop_fhold
+	{
+		display: none;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.4);
+		top: 0px;
+		left: 0px;
+		z-index: 800;
+	}
+	
+	.drop_from_hpi.active .drop_fhold
+	{
+		display: block; 
+	}
+	
+	.add_value_options  
+	{
+		position: absolute;
+		width: 55px;
+		top: -19px;
+		left: -10px;
+		
+		padding: 10px 0px;
+		
+		background-image: url('../assets/img/arrow_back_black.png');
+		background-repeat: no-repeat;
+		background-size: 8px auto;
+		background-position: 12px center;
+		
+		color: #000;
+		font-size: 13px; 
+		text-align: right;
+	}
+	
+	
+	
+	.dropBloks
+	{
+		position: relative;
+		display: inline-block;
+		width: 25%;
+		margin-bottom: 10px;
+		
+		text-align: center;
+		vertical-align: middle;
+	}
+	
+	.not_btmHold
+	{
+		position: relative;
+		
+		padding: 12px 0px 12px 15px;
+		background-color: #073889;
+		
+		z-index: 55;
+	}
+	
+	.camera_div, .photos_div, .upload_div, .shorcuts_div, .sing_div, .cancel_div, .preview_div, .draft_div
+	{
+		width: 80%;
+		height: 9vh;
+		min-height: 58px;
+		
+		margin: auto;
+		
+		background-color: #e1e1e1;
+		background-repeat: no-repeat;
+		background-size: 40%;
+		background-position: center center;
+		border-radius: 1px;
+		
+		box-shadow: 4px 5px 14px 2px rgba(0, 0, 0, 0.2); 
+	}
+	
+	.drops_holder
+	{
+		margin-top: 15px;
+	}
+	
+	.drops_holder.attach_divBig
+	{
+		max-height: 186px;
+		margin-top: 0px;
+		
+		overflow: auto;
+	}
+	
+	.add_btn_nhold
+	{
+		margin-top: 15px;
+	}
+	
+	.drops_holder.dragWithTextarea
+	{
+		display: inline-block;
+		width: 90%;
+		margin: 0px;
+		
+		border-bottom: 1px solid #e1e1e1;
+	
+		vertical-align: middle;
+	}
+	
+	.drops_holder.dragWithTextarea.fullWide
+	{
+		width: 94%;
+	}
+	
+	.drops_holder.dragWithTextarea.activatedFocus
+	{
+		border-bottom: 1px solid #88B6D9;
+	}
+	
+	.addNtBtn
+	{
+		position: relative;
+		display: inline-block;
+		width: 10%;
+		
+		text-align: center;
+		vertical-align: bottom;
+	}
+	
+	.addNtBtn div 
+	{
+		width: 30px;
+		height: 30px;
+		
+		margin: auto;
+		
+		
+		background-image: url("../assets/img/list_send.png");
+		background-repeat: no-repeat;
+		background-size: 23px auto; 
+		background-position: center center; 
+	}
+
+	.no_attach
+	{
+		padding: 5px;
+		
+		font-weight: bold;
+		text-align: center;
+	}
+	
+	.camera_div
+	{
+		background-image: url("../assets/img/note-camera.png");
+	}
+	
+	.photos_div
+	{
+		background-image: url("../assets/img/note-gallery.png");
+	}
+	
+	.upload_div
+	{
+		min-height: 58px;
+		background-image: url("../assets/img/note_file.png");
+	}
+	
+	.shorcuts_div
+	{
+		background-image: url("../assets/img/note-shortcuts.png");
+		background-size: 35%;
+	}
+	
+	.sing_div
+	{
+		background-image: url("../assets/img/icon_note_sign.png");
+		background-size: 60%;
+	}
+	
+	.left_arrMenu
+	{
+		position: relative;
+		display: inline-block;
+		width: 20%;
+		
+		vertical-align: middle;
+	}
+	
+	.drop_tit
+	{
+		padding-bottom: 15px;
+		padding-top: 5px;
+		
+		text-align: center;
+		border-bottom: 2px solid #0d48a9;
+		
+		font-weight: bold;
+		font-size: 16px;
+		color: #000;
+		
+		vertical-align: middle;
+	}
+	
+	.drop_tit.drop_titBlock
+	{
+		display: inline-block;
+		width: 60%;
+		
+		border-bottom: none;
+		text-align: left;
+	}
+	
+	.drop_tit div
+	{
+		text-align: center;
+	}
+	
+	.popup_subtext
+	{
+		width: 100%;
+		margin: auto;
+		margin-top: 5px;
+		
+		font-size: 15px;
+		font-weight: normal;
+	}
+	
+		.pop_edditBtn
+	{
+		display: inline-block;
+		width: 20%;
+		
+		vertical-align: middle;	
+	}
+	
+	.pop_edditBtn .edSvBtn
+	{
+		padding: 10px 0px;
+		
+		background-color: #007aff;
+		color: #fff;
+		font-size: 13px;
+		font-weight: bold;
+		text-align: center;
+	} 
+	
+	.right_arrows .pop_edditBtn
+	{
+		width: 100%;
+	}
+	
+	.drop_from_hpi .drops_height  
+	{
+		overflow: auto;
+	}
+	
+	.hpi_values
+	{
+		position: relative;
+		
+		margin-top: 10px;
+		padding: 10px;
+		
+		border-bottom: 1px solid #eee;
+		
+		font-size: 16px;
+	}
+	
+	.hpi_values.no_bord
+	{
+		border-bottom: 0px;
+	}
+	
+	.hpi_valOpt
+	{
+		display: inline-block;
+		width: 90%;
+		
+		padding-right: 25px;
+		
+		vertical-align: middle;
+	}
+	
+	.hpi_values.no_bord
+	{
+		border-bottom: 0px;
+	}
+	
+	.hpi_left, .hpi_right, .all_norText, .hpi_checkbox, .nomenu_title, .nomenu_book, .toggHold, .note_hpis, .checkbox_drop, .middle_texthpi
+	{
+		display: inline-block;
+		
+		vertical-align: middle;
+	}
+	
+	.hpi_checkbox, .check_div
+	{
+		width: 23px;
+		height: 23px;
+		
+		margin-left: 5px; 
+		
+		border: 1px solid #b3aeae;
+		border-radius: 100%;
+	}
+	
+	.check_div
+	{
+		width: 23px;
+		height: 23px;
+	}
+	
+	.inp_texthpi, .add_removehpi, .short_info, .short_pencil, .short_del
+	{
+		display: inline-block;
+		
+		vertical-align: middle;
+	}
+	
+	.inp_texthpi
+	{
+		width: 86%;
+	}
+	
+	.abs_search
+	{
+		position: absolute;
+		right: 0px;
+		top: 0px;
+		width: 45px;
+		height: 100%;
+		
+		background-image: url(../assets/img/search.png);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 50%;
+	}
+	
+	.width20
+	{
+		display: inline-block;
+		width: 20%;
+		text-align: center;
+	}
+	
+	.rel_circle
+	{
+		position:relative;
+		width: 38px;
+		height: 38px;
+		
+		border-radius: 50%;
+		background-color: #b1b1b1;
+		text-align: center;
+	}
+	
+	.rel_circle_small 
+	{
+		position: relative;
+		width: 30px;
+		height: 30px;
+		
+		border-radius: 50%;
+		background-color: #b1b1b1;
+		
+		text-align: center;
+	}
+	
+	.logo_text
+	{
+		display: inline-block;
+		font-size: 17px;
+		font-weight: 700;
+		font-family: 'Dancing Script', cursive;
+	} 
+	
+	.circle_like
+	{
+		position: absolute;
+		right: -13px;
+		top: 18px;
+		width: 21px;
+		height: 21px;
+		
+		border-radius: 50%;
+		background-color: #fff;
+		
+		text-align: center;
+		font-size: 8px;
+	}
+	
+	.circle_like_small 
+	{
+		position: absolute;
+		right: -9px;
+		top: 18px;
+		width: 16px;
+		height: 16px;
+		
+		border-radius: 50%;
+		background-color: #fff;
+		
+		text-align: center;
+		font-size: 7px;
+	}
+	
+	.rel_fvideo
+	{
+		position: relative;
+		width: 100%;
+		
+		font-size: 0;
+		overflow: hidden; 
+	}
+	
+	.video_background_img
+	{
+		width: 100%;
+		height: 100%;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		
+		z-index: 10;
+	}
+	
+	.video_abs
+	{
+		display: none;
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		width: 100%;
+		height: 100%;
+		
+		z-index: 1;
+	}
+	
+	.btn_play
+	{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 60px;
+		height: 60px;
+		margin-left: -30px;
+		margin-top: -40px;
+		
+		border-radius: 50%;
+		background-color: rgba(0, 0, 0, 0.5);
+		background-image: url(../assets/img/play.png);
+		background-repeat: no-repeat;
+		background-position: 22px center;
+		background-size: 20px;
+		
+		z-index: 20;
+	}
+	
+	.five_star_empty 
+	{
+		width: 100%;
+		height: 13px;
+		max-width: 82px;
+		background-image: url(../assets/img/rating_star1.png);
+		background-repeat: no-repeat;
+		background-size: auto 100%;
+		background-position: 0px center;
+	}
+	
+	.five_star_empty .five_star 
+	{
+		width: 77%;
+		height: 13px;
+		background-image: url(../assets/img/rating_star.png);
+		background-repeat: no-repeat;
+		background-size: auto 100%;
+		background-position: 0px center;
+	}
+	
+	.all_duration_list 
+	{
+		padding: 11px 0px 0px 0px;
+	}
+	
+	.main_text
+	{
+		padding: 13px 17px;
+		background-color: #fff;
+	}
+	
+	.grey_list_darker
+	{
+		padding: 13px 15px;
+		background-color: #f5f5f5;
+	}
+	
+	.grey_list_light
+	{
+		padding: 13px 15px;
+		background-color: #f9f9f9;
+	}
+	
+	.relative_top_coments
+	{
+		position: relative;
+		height: 34px;
+		padding: 0px 82px 0px 36px;
+	}
+	
+	.img_radius30
+	{
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		
+		border-radius: 50%;
+		background-color: grey;
+		vertical-align: middle;
+	}
+	
+	.name_comments
+	{
+		padding-bottom: 1px;
+	
+		font-size: 13px;
+		font-family: 'Monda', sans-serif;
+		font-weight: bold;
+		color: grey;
+		line-height: 1;
+	}
+	
+	.name_time
+	{
+		font-size: 12px;
+		font-family: Helvetica1;
+		color: grey;
+	}
+	
+	.absolute_rating
+	{
+		position: absolute;
+		right: 0px;
+		top: 0px;
+		width: 82px;
+		height: 100%;
+	}
+	
+	.rate_text
+	{
+		display: inline-block;
+		padding-right: 7px;
+		
+		font-size: 14px;
+		font-family: 'Dancing Script', cursive;
+		font-weight: 400;
+		color: grey;
+		vertical-align: middle;
+	}
+	
+	.comments_text
+	{
+		font-size: 13px;
+		font-family: Helvetica1;
+		color: grey;
+	}
+
+}

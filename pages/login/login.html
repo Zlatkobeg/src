@@ -1,0 +1,21 @@
+<div class="all_content SignupPage">
+	<div class="header_work">
+		<div class="back" (click)="openDashboard()"></div>
+		<div class="width1per">
+		</div><div class="rest99per header_txt">Login</div> 
+	</div>
+</div>
+<div class="all_signup" *ngIf="mainModel['login']">
+	<div class="relative_div">
+		<input class="ord_input" type="text" [class.red_border_btm]="mainModel['login'][0]['email'][2] == 1" placeholder="Email" [(ngModel)]="mainModel['login'][0]['email'][0]"/>
+		<div class="absolute_warning" [class.active]="mainModel['login'][0]['email'][2] == 1">{{mainModel['login'][0]['email'][1]}}</div>
+	</div>
+	<div class="relative_div">
+		<input class="ord_input" type="password" [class.red_border_btm]="mainModel['login'][0]['password'][2] == 1" placeholder="Password" [(ngModel)]="mainModel['login'][0]['password'][0]"/>
+		<div class="absolute_warning" [class.active]="mainModel['login'][0]['password'][2] == 1">{{mainModel['login'][0]['password'][1]}}</div>
+	</div>
+	<div class="for_btn txt_right">
+		<div class="txt" (click)="mainFunction['forgotPassword']()">Forgot password</div>
+	</div>
+	<div class="long_btn" (click)="mainFunction['login']()">LOGIN</div>
+</div>

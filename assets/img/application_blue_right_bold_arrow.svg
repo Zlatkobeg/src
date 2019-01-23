@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="8px" viewBox="0 0 8 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>Triangle</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="To-Do-list" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="calendar-expanded" transform="translate(-327.000000, -99.000000)" fill="#039BE5">
+            <g id="calendar" transform="translate(20.000000, 93.000000)">
+                <path d="M311,14 C310.752384,13.504767 310.2254,12.4508005 309.41905,10.8381003 C308.6127,9.22540023 307.80635,7.61270011 307,6 L315,6 L311,14 Z" id="Triangle" transform="translate(311.000000, 10.000000) rotate(-90.000000) translate(-311.000000, -10.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

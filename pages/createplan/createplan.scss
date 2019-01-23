@@ -1,0 +1,41 @@
+page-createplan {
+
+	.header_work
+	{
+		position: relative;
+		height: 45px;
+		padding: 0px 80px 0px 45px;
+		
+		box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+	}
+	
+	.back
+	{
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		height: 100%;
+		width: 45px;
+		
+		background-image: url(../assets/img/arrow_back.png);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 10px;
+	}	
+	
+	.header_txt
+	{
+		font-size: 14px;
+		color: #000;
+	}
+
+	.createplan
+	{
+		display: none;
+	}
+	
+	.createplan.active
+	{
+		display: block;
+	}
+}

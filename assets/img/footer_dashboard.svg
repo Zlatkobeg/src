@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="375px" height="82px" viewBox="0 0 375 82" version="1.1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>bottom navigation bar - home</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="48.4604167%" y1="-69.4312119%" x2="44.5083333%" y2="212.33327%" id="linearGradient-1">
+            <stop stop-color="#01579B" offset="0%"></stop>
+            <stop stop-color="#0097A7" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="dashboard" transform="translate(0.000000, -730.000000)" fill="url(#linearGradient-1)">
+            <g id="bottom-navigation-bar---home" transform="translate(0.000000, 730.000000)">
+                <g id="bottom-navigation-bar">
+                    <path d="M0,0 L27.7010223,7.46069873e-14 C29.2719981,7.71090172e-14 30.827687,0.308467474 32.2798057,0.907897277 L37.6141412,3.10989334 C40.5466494,4.32042305 43.8391997,4.32042305 46.7717079,3.10989334 L52.1060434,0.907897277 C53.5581621,0.308467474 55.113851,6.74090934e-14 56.6848267,6.57252031e-14 L375,0 L375,82 L0,82 L0,0 Z" id="Rectangle-3"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

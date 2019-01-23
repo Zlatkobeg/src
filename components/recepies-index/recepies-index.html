@@ -1,0 +1,24 @@
+<div class="header_work">
+	<div class="back" (click)="mainFunction['openDashboard']()"></div>
+	<div class="width1per">
+	</div><div class="rest99per header_txt">Recepti</div>
+	<div class="abs_search" (click)="mainFunction['openDrop']('drop_from_hpi')"></div>
+</div>
+<ion-scroll scrollX="false" scrollY="true">
+	<div class="product_list" *ngFor="let recepies of mainModel['recepies_list']; let i = index;" [ngStyle]="{'background-image': 'url('+ ((recepies.image && recepies.image != '') ?  recepies.image : '') + ')' }">
+		<div class="info_title" (click)="mainFunction['openRecepies'](recepies)">
+			<div class="white_title">{{recepies.name}}</div>
+			<div class="grey_txt mar_t3">by {{recepies.trainer_name}}</div>
+		</div> 
+		<div class="abs_like">
+			<div class="rel_circle">
+				<div class="width1per">
+				</div><div class="logo_text rest99per">OT</div>
+				<div class="circle_like">
+					<div class="width1per">
+					</div><div class="rest99per">{{recepies.like}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</ion-scroll>

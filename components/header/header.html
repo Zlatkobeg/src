@@ -1,0 +1,7 @@
+<!-- Generated template for the HeaderComponent component -->
+<div class="header"> 
+	<div class="home" *ngIf="mainModel['user'] && mainModel['user']['id'] != 0" (click)="mainFunction['openPopUp'](0)">
+	</div><div class="name">
+		<div class="width1px"></div><div>Online Trener</div>
+	</div><div class="message" *ngIf="mainModel['user'] && mainModel['user']['id'] != 0"></div>
+</div>

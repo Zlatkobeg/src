@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="6px" preserveAspectRatio="none" height="8px" viewBox="0 0 6 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow to expand icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="To-Do-list" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="to-do-list" transform="translate(-349.000000, -259.000000)" stroke="#039BE5">
+            <g id="appointment-" transform="translate(47.000000, 256.000000)">
+                <g id="arrow-to-expand-icon" transform="translate(303.000000, 3.000000)">
+                    <polyline id="Path-2" points="0 0 4 4 0 8"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

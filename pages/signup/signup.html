@@ -1,0 +1,40 @@
+<div class="all_content SignupPage">
+	<div class="header_work">
+		<div class="back" (click)="openDashboard()"></div>
+		<div class="width1per">
+		</div><div class="rest99per header_txt">Sign Up</div> 
+	</div>
+</div>
+<div class="all_signup" *ngIf="mainModel['signUp']">
+	<div class="relative_div">
+		<input class="ord_input" [class.red_border_btm]="mainModel['signUp'][0]['fname'][2] == 1" type="text" placeholder="First Name" [(ngModel)]="mainModel['signUp'][0]['fname'][0]"/>
+		<div class="absolute_warning" [class.active]="mainModel['signUp'][0]['fname'][2] == 1">{{mainModel['signUp'][0]['fname'][1]}}</div>
+	</div>
+	<div class="relative_div">
+		<input class="ord_input" type="text" [class.red_border_btm]="mainModel['signUp'][0]['lname'][2] == 1" placeholder="Last Name" [(ngModel)]="mainModel['signUp'][0]['lname'][0]"/>
+		<div class="absolute_warning" [class.active]="mainModel['signUp'][0]['lname'][2] == 1">{{mainModel['signUp'][0]['lname'][1]}}</div>
+	</div>
+	<div class="relative_div">
+		<input class="ord_input" type="text" [class.red_border_btm]="mainModel['signUp'][0]['email'][2] == 1" placeholder="Email" [(ngModel)]="mainModel['signUp'][0]['email'][0]"/>
+		<div class="absolute_warning" [class.active]="mainModel['signUp'][0]['email'][2] == 1">{{mainModel['signUp'][0]['email'][1]}}</div>
+	</div>
+	<div class="relative_div">
+		<input class="ord_input" type="password" [class.red_border_btm]="mainModel['signUp'][0]['password'][2] == 1" placeholder="Password" [(ngModel)]="mainModel['signUp'][0]['password'][0]"/>
+		<div class="absolute_warning" [class.active]="mainModel['signUp'][0]['password'][2] == 1">{{mainModel['signUp'][0]['password'][1]}}</div>
+	</div>
+	<div class="relative_div">
+		<input class="ord_input" type="password" [class.red_border_btm]="mainModel['signUp'][0]['confirm_password'][2] == 1" placeholder="Confirm Password"[(ngModel)]="mainModel['signUp'][0]['confirm_password'][0]"/>
+		<div class="absolute_warning" [class.active]="mainModel['signUp'][0]['confirm_password'][2] == 1">{{mainModel['signUp'][0]['confirm_password'][1]}}</div>
+	</div>
+	<div class="promotion_part">
+		<div class="fsquare_abs">
+			<div class="width1px">
+			</div><div class="square" [class.active]="mainModel['signUp'][0]['send_promotion'] == 1" (click)="mainFunction['checkCheckbox']()"></div>
+		</div>
+		<div class="txt">Send me promotion</div>
+	</div>
+	<div class="for_btn">
+		<div class="txt">By registration you agree to terms</div>
+	</div>
+	<div class="long_btn" (click)="mainFunction['signUp']()">SIGN UP</div>
+</div>

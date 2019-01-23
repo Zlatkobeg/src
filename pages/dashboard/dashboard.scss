@@ -1,0 +1,404 @@
+page-dashboard {
+
+	.scroll-content
+	{
+		overflow: hidden;
+	}
+	
+	.list_training 
+	{
+		position: relative;
+		width: 100%;
+		height: 160px;
+		padding: 8px 14px 8px 122px;
+		
+		background-color: #fff;
+		text-align: center;
+		-moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1);
+		-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1);
+		box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+		z-index: 10;
+	}
+	
+	.list_training1
+	{
+		position: relative;
+		width: 100%;
+		padding: 8px 122px 8px 14px;
+		height: 160px;
+		
+		background-color: #fbfbfb;
+		text-align: center;
+		
+		-moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1);
+		-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1);
+		box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+		z-index: 9;
+	}
+	
+	.list_training2 
+	{
+		position: relative;
+		width: 100%;
+		height: 160px;
+		padding: 14px;
+		
+		background-color: #fff;
+		text-align: center;
+		-moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1);
+		-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1);
+		box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+		z-index: 8;
+	}
+	
+	.z_index8
+	{
+		z-index: 8;
+	}
+	
+	.z_index7
+	{
+		z-index: 7;
+	}
+	
+	.z_index1
+	{
+		z-index: 1;
+	}
+	
+	.abs_img1
+	{
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 120px;
+		height: 100%;
+		
+		background-image: url(../assets/img/part_one.png);
+		background-repeat: no-repeat;
+		background-position: center bottom;
+		background-size: 106px;
+	}
+	 
+	.abs_img2
+	{
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		width: 134px;
+		height: 100%;
+		
+		background-image: url(../assets/img/part_two.png);
+		background-repeat: no-repeat;
+		background-position: center bottom;
+		background-size: 106px;
+	}
+	 
+	 
+	 
+	.width1px
+	{
+		display: inline-block;
+		width: 1px;
+		height: 100%;
+		
+		vertical-align: middle;
+	}
+	 
+	.width95
+	{
+		display: inline-block;
+		width: 95%;
+		
+		vertical-align: middle;
+	}
+	 
+	.third_img
+	{
+		background-image: url(../assets/img/third_part.png);
+	}
+	
+	.fourth_img
+	{
+		background-image: url(../assets/img/forth_part.png);
+		background-size: 50px;
+	}
+	
+	.fifth_img
+	{
+		background-image: url(../assets/img/img_footer.png);
+	}
+	 
+	.main_text
+	{
+		font-size: 14px;
+		font-family: 'Monda', sans-serif;
+		font-weight: bold;
+		color: #333;
+		text-align: left;
+	}
+	
+	.txt
+	{
+		padding-top: 7px;
+		
+		text-align: left;
+		font-size: 11px;
+		font-family: Helvetica4;
+		color: #8c8c8c;
+	}
+	
+	.rel_div
+	{
+		display: inline-block;
+		position: relative;
+		text-align: center;
+		overflow: hidden;
+		margin-top: 15px;
+	}
+	
+	.btn_white
+	{
+		display: inline-block;
+		width: 125px;
+		padding: 9px 0px;
+		border: 1px solid #000;
+		font-size: 12px;
+		font-family: 'Monda', sans-serif;
+		text-align: center;
+	}
+	
+	.abs_angle
+	{
+		position: absolute;
+		left: -9px;
+		top: -12px;
+		width: 17px;
+		height: 17px;
+		
+		border: 1px solid #000;
+		-webkit-transform: rotate(45deg);
+		transform: rotate(45deg);
+		z-index: 10;
+		background-color: #fff;
+	}
+	
+	.abs_angle_r
+	{
+		position: absolute;
+		right: -9px;
+		top: -12px;
+		width: 17px;
+		height: 17px;
+		
+		border: 1px solid #000;
+		-webkit-transform: rotate(45deg);
+		transform: rotate(45deg);
+		z-index: 10;
+		background-color: #fff;
+	}
+	
+	.for_btn
+	{
+		padding-top: 20px;
+	}
+	
+	.left_drop
+	{
+		position: relative;
+		background-color: #fff;
+		text-align: left;
+		overflow: visible;
+	}
+	
+	.left_drop.active
+	{
+		right: 0px;
+	}
+	
+	.drHoldLeft
+	{
+		position: fixed;
+		left: -300px;  
+		width: 83%;
+		height: 100%;
+		top: 0px;
+		
+		background-color: #fff;
+		box-shadow: 0px 8px 12px 4px rgba(0, 0, 0, 0.5);
+		z-index: 999;
+		transition: left 0.5s;
+	}
+	
+	.top_header
+	{
+		position: relative;
+		height: 140px;
+		padding: 20px 20px 20px 110px;
+		border-bottom: 1px solid #f3f3f3;
+	}
+	
+	.abs_left
+	{
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		width: 100px;
+		height: 100%;
+		
+		text-align: center;
+	}
+	
+	.user_pic
+	{
+		display: inline-block;
+		width: 90px; 
+		height: 90px;
+		
+		background-image: url(../assets/img/user_icon.svg);
+		background-color: #efefef;;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		border-radius: 50%;
+		
+		vertical-align: middle;
+	}
+	
+	.big_txt
+	{
+		font-size: 19px;
+		font-family: Helvetica3;
+	}
+	
+	.pad_t1
+	{
+		padding-top: 1px;
+	}
+	
+	.list_white
+	{
+		font-size: 14px;
+		font-family: Helvetica2;
+	}
+	
+	.inside_list_rel
+	{
+		position: relative;
+		padding: 17px 10px 17px 50px;
+	}
+	
+	.list_grey
+	{
+		background-color: #f1f1f1;
+		font-size: 14px;
+		font-family: Helvetica2;
+	}
+	
+	.image_list
+	{
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		width: 50px;
+		height: 51px;
+		
+		background-image: url('../assets/img/clock.png');
+		background-repeat: no-repeat;
+		background-size: 23px;
+		background-position: center center;
+	}
+	
+	.clock 
+	{
+		background-image: url('../assets/img/clock.png');
+		background-size: 23px;
+	}
+	
+	.burn
+	{
+		background-image: url('../assets/img/burn.png');
+		background-size: auto 25px;
+	}
+	
+	.abs_for_btn
+	{
+		position: absolute;
+		bottom: 0px;
+		left: 0px;
+		width: 100%;
+		padding: 18px 20px;
+		
+		border-top: 1px solid #f1f1f1;
+		font-size: 14px;
+	}
+	
+	.drop_fhold 
+	{
+		display: none;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.4);
+		top: 0px;
+		left: 0px;
+		z-index: 800;
+	}
+	
+	.trainer
+	{
+		background-image: url('../assets/img/trainer.png');
+		background-size: 23px;
+	}
+	
+	.planning
+	{
+		background-image: url('../assets/img/planning.png');
+		background-size: 23px;
+	}
+	
+	.friends
+	{
+		background-image: url('../assets/img/friends.png');
+		background-size: 23px;
+	}
+	
+	.favorites
+	{
+		background-image: url('../assets/img/favorites.png');
+		background-size: 23px;
+	}
+	
+	.inside_dashboard
+	{
+		padding: 15px;
+		box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+	}
+	
+	.relative_for_slider
+	{
+		position: relative;
+		overflow-x: scroll;
+		height: 120px;
+		margin-top: 10px;
+	}
+	
+	.absolute_slider
+	{
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		width: 2000px;
+	}
+	
+	.video_slider
+	{
+		display: inline-block;
+		width: 160px;
+		height: 120px;
+		margin-right: 10px;
+		
+		background-color: grey;
+	}
+}

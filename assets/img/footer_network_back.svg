@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="375px" height="82px" viewBox="0 0 375 82" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>bottom navigation bar - home</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="48.4604167%" y1="-69.4312119%" x2="44.5083333%" y2="212.33327%" id="linearGradient-1">
+            <stop stop-color="#01579B" offset="0%"></stop>
+            <stop stop-color="#0097A7" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="My-network" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="my-network-with-pending-requests" transform="translate(0.000000, -730.000000)" fill="url(#linearGradient-1)">
+            <g id="bottom-navigation-bar---my-network" transform="translate(0.000000, 730.000000)">
+                <g id="bottom-navigation-bar">
+                    <path d="M0,0 L124.701022,-1.77635684e-15 C126.271998,-2.0649404e-15 127.827687,0.308467474 129.279806,0.907897277 L134.614141,3.10989334 C137.546649,4.32042305 140.8392,4.32042305 143.771708,3.10989334 L149.106043,0.907897277 C150.558162,0.308467474 152.113851,4.46975045e-14 153.684827,4.4408921e-14 L375,0 L375,82 L0,82 L0,0 Z" id="Rectangle-3"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

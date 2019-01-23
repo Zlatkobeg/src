@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="35px" preserveAspectRatio="none" height="35px" viewBox="0 0 35 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>Oval</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="0%" x2="-39.9292232%" y2="138.963996%" id="linearGradient-1">
+            <stop stop-color="#01579B" offset="0%"></stop>
+            <stop stop-color="#0097A7" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="To-Do-list" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="calendar-expanded" transform="translate(-261.000000, -239.000000)" stroke="url(#linearGradient-1)" stroke-width="2">
+            <g id="calendar" transform="translate(20.000000, 93.000000)">
+                <g id="fri" transform="translate(241.000000, 63.000000)">
+                    <circle id="Oval" cx="17.5" cy="100.5" r="16.5"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,837 @@
+import { Component } from '@angular/core';
+import { NavController, Platform, Events } from 'ionic-angular';
+import * as $ from 'jquery';
+
+import { Keyboard } from '@ionic-native/keyboard';
+
+import { LoginPage } from '../login/login';
+import { ProvidersProvider } from '../../providers/providers/providers';
+
+@Component({
+  selector: 'page-home',
+  templateUrl: 'home.html'
+})
+export class HomePage {
+
+  constructor(public navCtrl: NavController, private platform: Platform, public commPro: ProvidersProvider, public events: Events, private keyboard: Keyboard) {
+	  window['main_event'] = this.events;
+	  window['provProvds'] = this.commPro;
+  }
+	  ionViewDidLoad() 
+		{
+			//this.keyboard.disableScroll(true);
+			let mainthis = this; 
+			this.platform.registerBackButtonAction(null);
+			this.keyboard.hideKeyboardAccessoryBar(false);
+			let thCtr = this.navCtrl;
+			window['user_type'] = 2;
+			
+			window['hasEnterFirstTime'] = true;
+			
+			window['resetTimeoutTimer'] = function ()
+				{
+					if ( window['inactivetimeout'] !== 0 ) { clearTimeout(window['inactivetimeout']); window['inactivetimeout'] = 0; }
+					window['inactivetimeout'] = setTimeout(function ()
+						{
+							if( mainthis.navCtrl.getActive().name != 'LoginPage' && mainthis.navCtrl.getActive().name != 'LoginPage' )
+								{
+									if ( !window['active_call'] && window['keyboardHeight'] == 0 )
+										{
+											window['isappactive'] = false;
+											window['loginKeyboard']();
+											
+											window['hasEnterLockScreen'] = true;
+											
+											//mainthis.navCtrl.push(LoginPage);
+											$('.logoPic').removeClass('active');
+											if ( localStorage.getItem("local_email") ) 
+												{
+													$('#email_login').val(localStorage.getItem("local_email"));
+													$('#full_code').val('');
+													
+													$('.code_login').show();
+													$('.emailpass_login').hide();
+													$('.custom_keyboard').show();
+													$('login-main .list').addClass('padd_bott_keyboard');
+													$('.logoPic').addClass('active');
+												}
+												
+											$('.login_div').addClass('active');
+											//$('.mission_control_custom_keyboard').removeClass('active');
+											/*
+											if ( localStorage.getItem("local_email") ) 
+												{
+													$('#email_login').val(localStorage.getItem("local_email"));
+													
+													$('.code_login').show();
+													$('.emailpass_login').hide();
+													$('.logoPic').addClass('active');
+													$('.custom_keyboard').show();
+
+													// Trigger the event
+													$($('.picker-toolbar .picker-button')[0]).trigger('click');
+												}
+												*/
+										}
+								}
+							
+						}, 3000000); 
+				}
+		 	
+			//Insert two script for google maps and google search
+			let oHead = document.getElementsByTagName('head').item(0);
+			let oScript= document.createElement("script");
+			oScript.type = "text/javascript";
+			oScript.src="https://maps.google.com/maps/api/js?libraries=places&key=AIzaSyAJpxt-j0TtT9skHk6Sdbv7fGXnBy3xmzg&language=en-US";
+			oHead.appendChild(oScript);
+			
+			oScript= document.createElement("script");
+			oScript.type = "text/javascript";
+			oScript.src="http://www.google.com/cse/cse.js?cx=004163923227120784248:5h2ddah9qty";
+			oHead.appendChild(oScript);
+			
+			oScript= document.createElement("script");
+			oScript.type = "text/javascript";
+			oScript.src="https://bit6-demo-next.firebaseapp.com/common/bit6.min.js";
+			oHead.appendChild(oScript);
+ 
+			window['jQuery'] = $;  
+			window['shortcutsMod'] = [];   
+			window['site_url'] = 'http://13.59.240.196/dev3/';   
+		
+			window['all_logs'] = [];
+			window['old_console'] = console.error;
+			window.console.error = function()
+				{
+					window['all_logs'].push(arguments);
+					window['old_console'].apply(console, arguments);
+
+					var log = {'arg': arguments, 'info': []};
+					if ( typeof arguments[1] == 'object' )
+						{
+							if ( typeof arguments[1]['stack'] == 'string' )
+								{
+									log['info'] = arguments[1]['stack'];
+								}
+						}
+
+					window['gajax']('data/log_console', {'details': log},  function(data, status, xhr) { });
+				}
+
+			window['gajax'] = function (url, post, func)
+			{
+				post['Auth'] = localStorage.getItem("Auth");
+				url = window['site_url'] + url;
+				$.post(url, post, function (data, status, xhr)
+										{
+											if ( data == 'login' )
+												{
+													window['islogged'] = '';
+													localStorage.setItem("Auth", '');
+													
+													mainthis.navCtrl.setRoot(LoginPage);
+													mainthis.navCtrl.popToRoot();
+														
+													return false;
+												}
+											
+											localStorage.setItem("Auth", (xhr.getResponseHeader('Auth') ? xhr.getResponseHeader('Auth') : ''));
+											func(data);
+										});
+			}
+
+
+			setTimeout(function()
+				{ 
+					thCtr.setRoot(LoginPage);
+					thCtr.popToRoot();				
+				}, 2000); 
+			
+			$('input').unbind('focus');
+			$(document).on('focus', 'input', function(e){ 
+				window['currentInputFocus'] = this;
+			});
+			
+			
+			let windowOriginalHeight = $('ion-nav').height();
+			window['origHeight'] = $('ion-nav').height();
+			window['mainWindowHeight'] = $(window).height();
+			window['mainWindowWidth'] = parseInt($(window).width());
+
+			//this.keyboard.hideKeyboardAccessoryBar(false);
+
+			// Event for showing keyboard
+			//window.addEventListener('native.keyboardshow', showKeybord);
+			window['keyboardHeight'] = 0;
+			window['keyboardHeightMax'] = 0;
+			let keyboardHeight = 0;
+
+			let keyboardHeights = 0;
+			$('.ios ion-nav').height($(window).height()-20);
+			function showKeybord(e)
+				{
+					$('.fixed_btm_btn_question').hide();
+					$('.footer').hide();
+					$('page-network .for_buttons').hide();
+					$('page-network .bottom_shadow').css('bottom', '0px');
+					$('page-network .bottom_group_shadow').css('bottom', '0px');
+					$('page-searchpatient .date_picker_list_header').css('height', '24%');
+					keyboardHeights = e.keyboardHeight;
+					window['keyboardHeight'] = Math.max(window['keyboardHeightMax'], e.keyboardHeight);
+					window['keyboardHeightMax'] = window['keyboardHeight'];
+					
+					if( window['keyboardHeight'] > 0 ) { keyboardHeight = (window['keyboardHeight'] - 45); }
+
+					//setTimeout(function () { window['checkFocusInput'](); }, 200);
+					
+					window['calculate_resize_all'](window['keyboardHeight']);
+					window['resizeAll'](null);
+					setTimeout(function(){
+						window['resizeAll'](null);
+					}, 200);
+					
+					if( window['device'].platform === 'Android' )
+						{
+							setTimeout(function(){
+							window['resizeAll'](null);
+								$(window['currentInputFocus']).blur();
+								$(window['currentInputFocus']).focus();
+							}, 200);
+						} 
+				}
+				
+			window.addEventListener('keyboardDidShow', (event) => {
+				showKeybord(event);
+			});
+			
+			window.addEventListener('keyboardDidHide', () => {
+				hideKeybord();
+			});
+			
+			window.addEventListener('keyboardWillHide', () => {
+				$('.footer').show();
+				window['calculate_resize_all'](0);
+			});
+
+			// Event for hidding keyboard		
+			//window.addEventListener('native.keyboardhide', hideKeybord);
+
+			// When keyboard is visible show footer and change height of text field
+			function hideKeybord()
+				{
+					$('.fixed_btm_btn_question').show();
+					$('.footer').show();
+					$('page-network .for_buttons').show();
+					$('page-searchpatient .date_picker_list_header').css('height', '15%');
+					window['keyboardHeight'] = 0;
+					window['resizeAll'](null);
+					
+					window['new_focus'] = [false, false];
+					window['num_resize'] = 0;
+					window['calculate_resize_all'](0);
+					keyboardHeights = 0;
+
+					setTimeout(function ()
+						{
+							window['keyboardHeight'] = 0;
+							window['resizeAll'](null);
+						}, 400);
+				}
+
+			window['new_focus'] = [false, false];
+
+			window['checkFocusInput'] = function ()
+				{
+					if ( window['new_focus'][0] && window['new_focus'][1] && window['keyboardHeight'] > 0 )
+						{
+							if ( window['new_focus'][1] == 'page-login .scroll-content' )
+								{
+									$(window['new_focus'][1]).scrollTop(10000);
+								}
+							else
+								{
+									var leftScreen = (windowOriginalHeight - window['keyboardHeightMax']) - $(window['new_focus'][1]).offset().top;
+									
+									var sstop = (($(window['new_focus'][0]).offset().top - $(window['new_focus'][1]).offset().top ) + $(window['new_focus'][0]).height()) - leftScreen + 140;
+									if( $(window['new_focus'][0]).hasClass('add_focus_scroll') ) 
+										{
+											sstop = sstop - 30; 
+										}
+									else if ( $(window['new_focus'][0]).hasClass('makeNewMail') )
+										{
+											sstop = sstop - 10;
+										}
+										
+									if ( sstop > 0 )
+										{
+											$(window['new_focus'][1]).scrollTop($(window['new_focus'][1]).scrollTop()+sstop);
+										}
+								}
+						}
+				}
+			
+			
+			$(window).on('resize', function(){
+				 window['resizeAll']();
+			});
+			
+			window['resizeAll'] = function()
+				{ 
+					/*
+					keyboardHeight = 0;  
+					let footer = 0;
+					let extra_buttons = 0;
+					
+					if( $('.for_buttons:visible').length > 0 ) { extra_buttons =  $('.for_buttons:visible').outerHeight(true); }
+					if( $('.history_div:visible').length > 0 ) { extra_buttons =  $('.history_div:visible').outerHeight(true); }
+					if( $('.resize_count_div:visible').length > 0 ) { extra_buttons =  $('.resize_count_div:visible').outerHeight(true); }
+					if( $('.fixed_btm_btn:visible').length > 0 ) { extra_buttons = 30; }
+					
+					if( $('.footer:visible').length > 0 ) { footer = $('.footer:visible').outerHeight(true); }
+					if( window['keyboardHeight'] > 0 ) { keyboardHeight = window['keyboardHeight']; }
+					if( $('.fixed_btm_btn_question:visible').length > 0 ) { if ( window['keyboardHeight'] > 0 ) { extra_buttons = 0; } else { extra_buttons = 65; } }
+					if( $('.abs_btm_btn_question:visible').length > 0 ) { if ( window['keyboardHeight'] > 0 ) { extra_buttons = 0; } else { extra_buttons = 100; } }
+				
+					$('.scroll-y:visible').each(function ()
+						{
+							$(this).stop().css({'height': (windowOriginalHeight - $(this).offset().top - keyboardHeight - footer - extra_buttons)+'px'});
+							if ( $('.categories_component:visible') ) { $('.categories_component').stop().css({'height': (windowOriginalHeight - $(this).offset().top)+'px'}); }
+						});*/
+				}
+				
+			window['undefinedOldModels'] = function ()
+					{
+						window['alertsOnePatient'] = undefined;
+						window['contactPatientfromAlert'] = undefined;
+						window['backToNotes'] = undefined;
+						window['openPracticeFromPopUp'] = undefined;
+						window['openPracticeFromCompleted'] = undefined;
+						window['fromMyNetwork'] = undefined;
+						window['fromPatientHome'] = undefined;
+						window['isFromBookApp'] = undefined;
+					}
+					
+			window['quickpick'] = [];
+			window['gajax']('careplan/quickpick', { },  function(data, status, xhr)
+				{
+					data = $.parseJSON(data);
+					window['quickpick'] = data;
+				});
+			
+			window['arr_names'] = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+		
+			window['makeCalendar'] = function( md, full_year, last_month, old_month, old_full_year )
+				{
+						var months_array = [];
+						var firstDay = new Date(full_year, last_month, 1);
+						var first_month_day = new Date(firstDay).getDay();
+						var last_month_days = new Date(2018, last_month, 0).getDate();
+						var lastDay = new Date(full_year, last_month + 1, 0).getDate();
+
+						let date_format_month = window['arr_names'][last_month];
+						let date_format_year = full_year;
+
+						if( first_month_day != 0 )
+							{
+								var days_diff = first_month_day;
+								
+								for( var i = last_month_days; i > (last_month_days - days_diff) ; i-- )
+									{
+										months_array.unshift({
+																'num': i,
+																'is_last': true
+															});
+									}
+								
+							}
+						
+						for( var i = 1; i <= lastDay ; i++ )
+							{
+								months_array.push({
+														'num': i
+													});
+							}	
+
+						let mnth_arra = months_array.length;
+						
+						if( (42 - mnth_arra) < 7 )
+							{
+								for( var i = 0; i < 42 - mnth_arra; i++ )
+									{
+										months_array.push({
+																'num': i+1,
+																'is_last': true
+															});
+									}
+							}
+						
+						return {'calendar_days': months_array, 'calendar_month': date_format_month, 'calendar_year': date_format_year};
+				}			
+			
+			window['allSavedPictures'] = [];
+			window['allSavedPicturesChecker'] = [];
+			
+			window['startMainChat'] = function(id, patient_id)
+				{
+					window['gajax']('communication/checkifchatexists', {'chat_users': id, 'patient_id': patient_id},  function(data, status, xhr)
+						{
+							$('#chatMessageModel').text('');
+							window['main_event'].publish('startMessagesChat', {'chat_id': data});
+						});
+				}
+			
+			
+			window['saveBase64Images'] = function(img) 
+				{
+					var xhr = new XMLHttpRequest();
+					var reader = new FileReader();
+					for( let i = 0; i < img.length; i++ )
+						{
+							if( window['allSavedPicturesChecker'].indexOf(img[i]) == -1 )
+								{
+									xhr.open('POST', img[i], true);
+									xhr.responseType = 'blob'; 
+									
+									var params = 'Auth='+localStorage.getItem("Auth");
+									xhr.onload = function(e) {
+									  if (this.status == 200) {
+										// get binary data as a response
+										var blob = this.response;
+										reader.onload = function (e) {
+											let imgSrc;
+											imgSrc = e;
+											window['allSavedPictures'].push({
+																				'originalImage': img[i],
+																				'base64Image': imgSrc.target.result
+																			});
+											window['allSavedPicturesChecker'].push(img[i]);
+										}
+										reader.readAsDataURL(blob);
+									  }
+									};
+									
+									xhr.send();
+								}
+						}
+				}
+				
+				
+			// Function for validation Email address
+			window['validateEmail'] = function(email) 
+				{
+					var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+					return re.test(email);
+				}
+			
+			window['check_notifications_timeout'] = 0; 
+			window['check_notifications_timeout1'] = 0; 
+			window['check_notifications'] = function(first_run)
+				{
+					return new Promise((resolve, reject) => { 
+						window['gajax']('updates/getnotifications', {'first_run': first_run},  function(data, status, xhr)
+							{
+								data = JSON.parse(data); 
+								resolve(data);
+								
+								if ( typeof data['calls'] !== 'undefined' ) 
+									{ 
+										
+										let data2 = JSON.parse(data['calls']);
+										
+										
+										window['main_call_list'] = data2['call_list'];
+										window['saveBase64Images'](data2['call_images']);
+										window['main_event'].publish('updateCalls', {'main_calls': window['main_call_list']});
+									}
+									
+								if ( typeof data['chat'] !== 'undefined' ) 
+									{ 
+										let data2 = JSON.parse(data['chat']);
+										window['main_chat_list'] = data2;
+										window['saveBase64Images'](data2['chat_images']);
+										window['main_event'].publish('updateChat', {'main_chat': window['main_chat_list']});
+									}
+								
+								if ( typeof data['messages'] !== 'undefined' ) 
+									{ 
+										let data2 = JSON.parse(data['messages']);
+										window['main_messages'] = data2['messages_list'];
+										window['saveBase64Images'](data2['messages_images']);
+										window['main_event'].publish('updateCalls', {'main_messages': window['main_messages']});
+									}
+								
+								if( typeof data['check_call'] !== 'undefined' ) { window['update_calls'](); }
+								
+								if ( typeof data['taskandalerts'] !== 'undefined' )
+									{
+										let data3 = JSON.parse(data['taskandalerts']);
+										
+										window['main_alert_list'] = data3;
+										window['saveBase64Images'](data3['image_to_save']);
+										window['main_event'].publish('updateAlerts', window['main_alert_list']);
+									}
+									
+								if ( typeof data['network'] !== 'undefined' )
+									{
+										let data4 = JSON.parse(data['network']);
+										
+										window['main_network_list'] = data4;
+										window['saveBase64Images'](data4['image_to_save']);
+										window['main_event'].publish('updateNetwork', window['main_network_list']);
+									}
+									
+								if( typeof data['last_search'] !== 'undefined' )
+									{
+										let data5 = JSON.parse(data['last_search']);
+										
+										window['main_prevoius_patient'] = data5['main_list'];
+										window['main_prevoius_patient_id_list'] = data5['array_list'];
+										if ( data5['image_to_save'] != null )
+											{
+										window['saveBase64Images'](data5['image_to_save']);
+											}
+										window['main_event'].publish('updateSearchPatient', window['main_prevoius_patient']);
+									}
+								
+								if ( typeof data['todolist'] !== 'undefined' )
+									{
+										let data5 = JSON.parse(data['todolist']);
+										
+										window['main_todolist'] = data5;
+										//window['saveBase64Images'](data5['image_to_save']);
+										window['main_event'].publish('updateTodolist', window['main_todolist']);
+									}
+					
+								if ( window['push_token'] == '' )
+									{
+										if ( window['check_notifications_timeout'] > 0 ) { clearTimeout(window['check_notifications_timeout']); window['check_notifications_timeout'] = 0; }
+										window['check_notifications_timeout'] = setTimeout(function () { window['check_notifications'](); }, 1000);
+									}
+							});
+							
+						if ( window['check_notifications_timeout1'] > 0 ) { clearTimeout(window['check_notifications_timeout1']); window['check_notifications_timeout1'] = 0; }
+						window['check_notifications_timeout1'] = setTimeout(function () { window['check_notifications'](); }, 1000);
+					});
+				}
+				
+			window['calculate_resize_all'] = function(key_height)
+				{
+					let pages_scroll_settings = [
+											 {
+												 'page': 'page-dashboard',
+												 'header_size': 103,
+												 'footer_size': 84,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'page-network',
+												 'header_size': 65, //184
+												 'footer_size': 84,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'page-telemed',
+												 'header_size': 163,
+												 'footer_size': 84,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'telemed-chat',
+												 'header_size': 128,
+												 'footer_size': 0,
+												 'additional_btn': 66,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'page-searchpatient',
+												 'header_size': 176,
+												 'footer_size': 84,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'records-patienthome',
+												 'header_size': 79,
+												 'footer_size': 0,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'records-patientmedication',
+												 'header_size': 79,
+												 'footer_size': 0,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'records-patientallergies',
+												 'header_size': 79,
+												 'footer_size': 0,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'records-patientlabs',
+												 'header_size': 79,
+												 'footer_size': 0,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'records-note',
+												 'header_size': 93,
+												 'footer_size': 0,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'records-patientcontactcall',
+												 'header_size': 79,
+												 'footer_size': 0,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'call-keypad',
+												 'header_size': 114,
+												 'footer_size': 0,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height  
+											 },
+											 {
+												 'page': 'records-history',
+												 'header_size': 238,
+												 'footer_size': 0,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height  
+											 },
+											 {
+												 'page': 'records-patientrecords',
+												 'header_size': 105,
+												 'footer_size': 0,
+												 'additional_btn': 61,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'cronic-carereportall',
+												 'header_size': 134,
+												 'footer_size': 84,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'cronic-carereport',
+												 'header_size': 134,
+												 'footer_size': 0,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'alerts-index',
+												 'header_size': 66,
+												 'footer_size': 84,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'todolist-main',
+												 'header_size': 66,
+												 'footer_size': 84,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'appointment-request',
+												 'header_size': 133,
+												 'footer_size': 0,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'precall-question',
+												 'header_size': 133,
+												 'footer_size': 67,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'todolist-folowup',
+												 'header_size': 133,
+												 'footer_size': 0,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'book-appointment',
+												 'header_size': 155,
+												 'footer_size': 0,
+												 'additional_btn': 66,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'note-index',
+												 'header_size': 65, //180
+												 'footer_size': 70,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'network-newcontact',
+												 'header_size': 180,
+												 'footer_size': 84,
+												 'additional_btn': 35,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'network-group',
+												 'header_size': 180,
+												 'footer_size': 84,
+												 'additional_btn': 62,
+												 'keyboard_height': key_height
+											 },
+											 {
+												'page': 'telemed-index',
+												'header_size': 172,
+												'footer_size': 84,
+												'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'records-contactemail',
+												 'header_size': 220,
+												 'footer_size': 60,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'records-addalergies',
+												 'header_size': 128,
+												 'footer_size': 60,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'records-previewnote',
+												 'header_size': 79,
+												 'footer_size': 0,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'records-adherence',
+												 'header_size': 143,
+												 'footer_size': 0,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'page-todolist .precall-newquestion',
+												 'header_size': 133,
+												 'footer_size': 130,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'page-records .precall-newquestion',
+												 'header_size': 70,
+												 'footer_size': 130,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'page-records .precall-listquestion',
+												 'header_size': 70,
+												 'footer_size': 70,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'page-todolist .precall-savedquestion',
+												 'header_size': 133,
+												 'footer_size': 130,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'page-network .telemed_chat_main .just_scroll',
+												 'header_size': 60,
+												 'footer_size': 0,
+												 'additional_btn': 66,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'page-telemed .telemed_chat_main .just_scroll',
+												 'header_size': 60,
+												 'footer_size': 0,
+												 'additional_btn': 66,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'page-records .telemed_chat_main .just_scroll',
+												 'header_size': 130,
+												 'footer_size': 0,
+												 'additional_btn': 66,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'page-network .only_relative_network',
+												 'header_size': 128,
+												 'footer_size': 130,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'page-network .only_relative_group_network',
+												 'header_size': 244,
+												 'footer_size': 130,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'page-records .book_app_scroll',
+												 'header_size': 130,
+												 'footer_size': 0,
+												 'additional_btn': 126,
+												 'keyboard_height': key_height
+											 },
+											 {
+												 'page': 'page-records .question_scroll',
+												 'header_size': 100,
+												 'footer_size': 0,
+												 'additional_btn': 43,
+												 'keyboard_height': key_height
+											 },	
+											 {
+												 'page': 'page-note .main_note_plan',
+												 'header_size': 50,
+												 'footer_size': 0,
+												 'additional_btn': 97,
+												 'keyboard_height': key_height
+											 },
+ 											{
+												 'page': 'note-index .for_all_symptoms',
+												 'header_size': 115,
+												 'footer_size': 75,
+												 'additional_btn': 0,
+												 'keyboard_height': key_height
+											 },
+										];
+										
+						let pred_styles = '<style>';
+						$.each(pages_scroll_settings, function(a, b){
+							let key_or_foot = b['footer_size'];
+							if( b['keyboard_height'] > 0 ) { key_or_foot = b['keyboard_height'];  }
+							pred_styles += b['page']+' .scroll-y { height: '+(window['origHeightNav'] - b['header_size'] - b['additional_btn'] - key_or_foot)+'px; }';
+						});
+						
+						pred_styles += '</style>';
+						$('#for_style').html(pred_styles); 	
+				}
+				
+			window['origHeightNav'] = $('ion-nav').height();	
+			window['calculate_resize_all'](0);
+		}
+} 

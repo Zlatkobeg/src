@@ -1,0 +1,71 @@
+header {
+
+	.header
+	{
+		position: relative;
+		padding: 0px 60px;
+		
+		background-color: #fff;
+		border-botom: 1px solid #c0c0c0;
+		
+		box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+		z-index: 2;
+	}
+	
+	.home
+	{
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		width: 60px;
+		height: 45px;
+		
+		background-image: url(../assets/img/home_active.png);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 21px;
+		vertical-align: middle;
+	}
+	
+	.name
+	{
+		display: inline-block;
+		width: 99%;
+		height: 45px;
+		
+		font-size: 18px;
+		font-family: 'Dancing Script', cursive;
+		
+		text-align: center;
+		vertical-align: middle;
+	}
+	
+	.name div
+	{
+		display: inline-block;
+		vertical-align: middle;
+	}
+	
+	.width1px
+	{
+		width: 1px;
+		height: 100%;
+		margin-left: -1px;
+	}
+	
+	.message
+	{
+		position: absolute;
+		right: 0px;
+		top: 0px;
+		width: 60px;
+		height: 45px;
+		
+		background-image: url(../assets/img/send_active.png);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 21px;
+		vertical-align: middle;
+	}
+	
+}

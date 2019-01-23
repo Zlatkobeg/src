@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" preserveAspectRatio="none" height="6px" viewBox="0 0 20 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>Triangle Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="tapping-on-DOB-fields" transform="translate(-314.000000, -720.000000)" fill="#4C98CF">
+            <g id="picker" transform="translate(0.000000, 191.000000)">
+                <polygon id="Triangle-Copy" points="324 535 314 529 334 529"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

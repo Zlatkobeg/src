@@ -1,0 +1,41 @@
+<div class="all_content WorkoutPage">
+	<div class="workout workout_index active"><workout-index></workout-index></div>
+	<div class="workout workout_details"><workout-details></workout-details></div>
+	<footer></footer>
+	<div class="drop_from_hpi">
+		<div class="drHold">
+			<div class="top_menuList">
+				<div class="white_txt">Filter</div>
+			</div>
+			<div class="all_filter">
+				<ion-scroll scrollX="false" scrollY="true">
+					<div class="list_white" [ngClass]="{'list_white': (i%2 == 0), 'list_grey': (i%2 != 0) }" *ngFor="let filter of mainModel['filter_list']; let i = index;">
+						<div class="inside_list_rel" (click)="mainFunction['openDropBottom']($event)">
+							<div class="image_list {{filter.class}}"></div>
+							<!-- <div class="image_list"></div> -->
+							<div class="">{{filter.name}}</div>
+						</div>
+						<div class="drop_open" *ngIf="filter.value.length == 0">
+							<div class="width70">
+								<div class="width40">
+									<input class="noborder_inp" type="number" placeholder="Min"/>
+								</div><div class="width20">
+									-
+								</div><div class="width40">
+									<input class="noborder_inp" type="number" placeholder="Max"/>
+								</div>
+							</div><div class="width30 pad_l10">{{filter.type}}</div>
+						</div>
+						<div class="drop_open" *ngIf="filter.value.length != 0">
+							<div class="padtb4" *ngFor="let value of filter.value; let i = index;">
+								<div class="checkbox" (click)="mainFunction['checkCheckbox']($event)"></div>
+								<div class="number_txt">{{value[0]}}<span>({{value[1]}})</span></div>
+							</div>
+						</div>
+					</div>
+				</ion-scroll>
+			</div>
+		</div> 
+		<div class="drop_fhold" (click)="mainFunction['closeDrop']('drop_from_hpi')"></div>
+	</div> 
+</div>

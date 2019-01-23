@@ -1,0 +1,101 @@
+<div class="header_work">
+	<div class="back" (click)="mainFunction['openComponent']('recepies_index')"></div>
+	<div class="width1per">
+	</div><div class="rest99per header_txt">Recepti</div>
+</div>
+<ion-scroll scrollX="false" scrollY="true">
+	<div class="rel_fvideo" id="for_recepies_details">
+		<!-- <video id="workout_video" width="100%" height="auto" preload="auto" *ngIf="mainModel['recepies_info']['video_link']" poster="{{mainModel['recepies_info']['image']}}">
+			<source src="{{mainModel['recepies_info']['video_link']}}" type="video/mp4">
+		</video> -->
+		<!-- <div>
+			<div class="btn_play" (click)="mainFunction['startVideo']($event)"></div>
+			<div class="info_title1">
+				<div class="pad_b5">
+					<div class="five_star_empty">
+						<div class="five_star"></div>
+					</div>
+				</div>
+				<div class="white_title_small">{{mainModel['recepies_info']['name']}}</div>
+			</div>
+			<div class="abs_like">
+				<div class="rel_circle_small">
+					<div class="width1per">
+					</div><div class="logo_text f_size12 rest99per">OT</div>
+					<div class="circle_like_small">
+						<div class="width1per">
+						</div><div class="rest99per">{{mainModel['recepies_info']['like']}}</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
+	</div>
+	<div class="all_details" *ngIf="mainModel['recepies_info']">
+		<div class="main_text">Workout details</div>
+		<div>
+			<div class="grey_list_darker">
+				<div class="name_list inline_block">Difficulty:
+				</div><div class="name_value inline_block pad_l5">{{mainModel['recepies_info']['dificulty']}}/5</div>
+			</div>
+			<div class="grey_list_light">
+				<div class="name_list inline_block">Equipment:
+				</div><div class="name_value inline_block pad_l5">{{mainModel['recepies_info']['equipment']}}</div>
+			</div>
+			<div class="grey_list_darker">
+				<div class="name_list inline_block">Training Type:
+				</div><div class="name_value inline_block pad_l5">{{mainModel['recepies_info']['type']}}</div>
+			</div>
+		</div>
+		<div class="main_text">
+			<div class="width35l">Reviews (40)
+			</div><div class="width65r">
+				<div class="rate_text">Tap to rate
+				</div><div class="inline_middle five_star_empty"></div>
+			</div>
+		</div>
+		<div>
+			<div class="grey_list_darker">
+				<div class="relative_top_coments">
+					<div class="absl_width35">
+						<div class="width1px">
+						</div><div class="img_radius30"></div>
+					</div>
+					<div class="height100">
+						<div class="width1per">
+						</div><div class="rest99per">
+							<div class="name_comments">Cath</div>
+							<div class="name_time">1 week ago</div>
+						</div>
+					</div>
+					<div class="absolute_rating">
+						<div class="width1per">
+						</div><div class="rest99per">
+							<div class="five_star_empty">
+								<div class="five_star"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="pad_t5 comments_text">I wasn't expecting much but I really liked it</div>
+				<div class="pad_t10">
+					<div class="left_like">
+						<div class="rest99per like">
+							<div class="width1per">
+							</div><div class="rest99per">7</div>
+						</div>
+					</div>
+					<div class="right_comments">
+						<div class="rest99per comments">
+							<div class="width1per">
+							</div><div class="rest99per">0</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="grey_list_light">
+				<div class="name_list inline_block">Calorie Burn:
+				</div><div class="name_value inline_block pad_l5">{{mainModel['recepies_info']['calorie_burn']}}</div>
+			</div>
+		</div>
+	</div>
+</ion-scroll>

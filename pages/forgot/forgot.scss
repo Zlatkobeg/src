@@ -1,0 +1,166 @@
+page-forgot {
+	.header_work
+	{
+		position: relative;
+		height: 45px;
+		padding: 0px 80px 0px 45px;
+		
+		box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+	}
+	
+	.all_filter
+	{
+		overflow: auto;
+	}
+	
+	.back
+	{
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		height: 100%;
+		width: 45px;
+		
+		background-image: url(../assets/img/arrow_back.png);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 10px;
+	}	
+		
+	.header_txt
+	{
+		font-size: 14px;
+		color: #000;
+	}
+	
+	.all_signup
+	{
+		padding: 30px 20px;
+	}
+	
+	.ord_input
+	{
+		width: 100%;
+		margin: 10px 0px;
+		border: none;
+		border-bottom: 1px solid #000;
+		
+		font-size: 14px;
+	}
+	
+	.red_border_btm
+	{
+		border-bottom: 1px solid #ec0000;
+	}
+	
+	.promotion_part
+	{
+		position: relative;
+		padding: 18px 0px 18px 35px;
+	}
+	
+	.txt 
+	{
+		font-size: 11px;
+		font-family: Helvetica4;
+		color: #8c8c8c;
+	}
+	
+	.fsquare_abs
+	{
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		width: 35px;
+		height: 100%;
+	}
+	
+	.square
+	{
+		display: inline-block;
+		width: 18px;
+		height: 18px;
+		
+		border: 1px solid #000;
+		border-radius: 2px;
+		vertical-align: middle;
+	}
+	
+	.square.active
+	{
+		background-image: url(../assets/img/check_black.png);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 11px;
+	}
+	
+	.rel_div
+	{
+		position: relative;
+		text-align: center;
+		overflow: hidden;
+	}
+	
+	.abs_angle
+	{
+		position: absolute;
+		left: -9px;
+		top: -12px;
+		width: 17px;
+		height: 17px;
+		
+		border: 1px solid #000;
+		-webkit-transform: rotate(45deg);
+		transform: rotate(45deg);
+		z-index: 10;
+		background-color: #fff;
+	}
+	
+	.btn_white
+	{
+		display: inline-block;
+		width: 100%;
+		padding: 6px 0px;
+		border: 1px solid #000;
+		font-size: 12px;
+		font-family: 'Monda', sans-serif;
+		text-align: center;
+	}
+	
+	.for_btn
+	{
+		padding: 10px 0px;
+	}
+	
+	.long_btn
+	{
+		padding: 10px;
+		border: 1px solid #000;
+		border-radius: 2px;
+		
+		font-size: 18px;
+		font-weight: bold;
+		color: #000;
+		text-align: center;
+	}
+	
+	.relative_div
+	{
+		position: relative;
+	}
+	
+	.absolute_warning
+	{
+		display: none;
+		position: absolute;
+		right: 0px;
+		bottom: -5px;
+		font-size: 10px;
+		color: #ec0000;
+	}
+	
+	.absolute_warning.active
+	{
+		display: block;
+	}
+}

@@ -1,0 +1,134 @@
+<div class="all_content DashboardPage">
+	<header></header>
+	<div class="all_in_this">
+		<ion-scroll scrollX="false" scrollY="true">
+			<div *ngIf="mainModel['user'] && mainModel['user']['id'] != 0 && mainModel['user_plan'] && mainModel['user_plan'].length == 0">
+				<div class="content_part inside_dashboard">
+					<div class="main_text txt_center">Pick your plan</div>
+					<div class="txt pad_t15">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					</div>
+					<div class="for_btn">
+						<div class="width45l">
+							<div class="rel_div" (click)="openCreateplan()"><div class="abs_angle_r"></div><div class="btn_white">Create workout plan</div></div>
+						</div><div class="width10">
+							<div class="txt txt_center">or</div>
+						</div><div class="width45r">
+							<div class="rel_div"><div class="abs_angle"></div><div class="btn_white">Find trainer</div></div>
+						</div>
+					</div>
+				</div>
+				<div class="content_part inside_dashboard">
+					<div class="main_text">New workouts</div>
+					<div class="relative_for_slider">
+						<div class="absolute_slider">
+							<div class="video_slider">
+							</div><div class="video_slider">
+							</div><div class="video_slider">
+							</div><div class="video_slider">
+							</div><div class="video_slider">
+							</div><div class="video_slider">
+							</div><div class="video_slider">
+							</div><div class="video_slider">
+							</div><div class="video_slider">
+							</div><div class="video_slider">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="content_part inside_dashboard">
+					<div class="main_text">New recepies</div>
+					<div class="relative_for_slider">
+						<div class="absolute_slider">
+							<div class="video_slider">
+							</div><div class="video_slider">
+							</div><div class="video_slider">
+							</div><div class="video_slider">
+							</div><div class="video_slider">
+							</div><div class="video_slider">
+							</div><div class="video_slider">
+							</div><div class="video_slider">
+							</div><div class="video_slider">
+							</div><div class="video_slider">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="content_part" *ngIf="mainModel['user'] && mainModel['user']['id'] == 0">
+				<div class="list_training height28vh">
+					<div class="width1px">
+					</div><div class="width95">
+						<div class="main_text">Workout videos</div>
+						<div class="txt">We believe fitness should be accessible to everyone, everywhere, regardless of income level or access to a gym.</div>
+						<div class="rel_div"><div class="abs_angle"></div><div class="btn_white" (click)="openWorkout()" tappable>Find workout</div></div>
+					</div>
+					<div class="abs_img1"></div>
+				</div>
+				<div class="list_training1 height28vh">
+					<div class="width1px">
+					</div><div class="width95">
+						<div class="main_text">Meal preparation videos</div>
+						<div class="txt">We believe fitness should be accessible to everyone, everywhere, regardless of income level or access to a gym..</div>
+						<div class="rel_div"><div class="abs_angle_r"></div><div class="btn_white" (click)="openRecepies()">Find recepies</div></div>
+					</div>
+					<div class="abs_img2"></div>
+				</div>
+				<div class="list_training2 height29vh">
+					<div class="txt">Lorem ipsum dolor sit amet, no nam appareat repudiandae, vel at ridens noster accusam. Tation recteque accommodare vim te. Qui ea quem clita. Sit ad etiam disputationi. Per quod iuvaret ad, mea eu vitae consetetur.</div>
+					<div class="for_btn">
+						<div class="width48l">
+							<div class="rel_div" (click)="mainFunction['openSignUp']()"><div class="abs_angle_r"></div><div class="btn_white">Sign Up</div></div>
+						</div><div class="width48r">
+							<div class="rel_div" (click)="mainFunction['openLogin']()"><div class="abs_angle"></div><div class="btn_white">Login</div></div>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</ion-scroll>
+		<div class="left_drop" *ngIf="mainModel['user']">
+			<div class="drHoldLeft">
+				<div class="top_header">
+					<div class="abs_left"> 
+						<div class="width1px">
+						</div><div class="user_pic" [ngStyle]="{'background-image': 'url('+ ( mainModel['user']['image'] != '' ) ? mainModel['user']['image'] : '../assets/img/user_icon.svg' + ')', 'background-position': ( mainModel['user']['image'] != '' ) ? 'center center' : 'center bottom', 'background-size': ( mainModel['user']['image'] != '' ) ? 'cover' : '83%' }"></div>
+					</div>
+					<div class="height100">
+						<div class="width1per">
+						</div><div class="rest99per">
+							<div class="big_txt">{{mainModel['user']['fname']}}</div>
+							<div class="big_txt pad_t1">{{mainModel['user']['lname']}}</div>
+						</div>
+					</div>
+				</div>
+				<div class="list_white">
+					<div class="inside_list_rel">
+						<div class="image_list trainer"></div>
+						<div class="">Trainers</div>
+					</div>
+				</div>
+				<div class="list_grey">
+					<div class="inside_list_rel">
+						<div class="image_list planning"></div>
+						<div class="">Created Programs</div>
+					</div>
+				</div>
+				<div class="list_white">
+					<div class="inside_list_rel">
+						<div class="image_list friends"></div>
+						<div class="">Friends</div>
+					</div>
+				</div>
+				<div class="list_grey">
+					<div class="inside_list_rel">
+						<div class="image_list favorites"></div>
+						<div class="">Favorite</div>
+					</div>
+				</div>
+				<div class="abs_for_btn" (click)="mainFunction['logout']()">LOG OUT</div>
+			</div>
+			<div class="drop_fhold" (click)="mainFunction['openPopUp'](-300)"></div>
+		</div>
+	</div>
+	<footer></footer>
+</div>

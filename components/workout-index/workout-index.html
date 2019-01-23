@@ -1,0 +1,25 @@
+<div class="header_work">
+	<div class="back" (click)="mainFunction['openDashboard']()"></div>
+	<div class="width1per">
+	</div><div class="rest99per header_txt">Workout Videos</div>
+	<div class="abs_search" (click)="mainFunction['openDrop']('drop_from_hpi')"></div>
+</div>
+<ion-scroll scrollX="false" scrollY="true">
+	<div class="product_list" *ngFor="let workout of mainModel['workout_list']; let i = index;" [ngStyle]="{'background-image': 'url('+ ((workout.image && workout.image != '' && workout.loaded == 1) ?  workout.image : '') + ')' }" >
+		<img hidden (load)="mainFunction['doSomething'](i)" [src]="workout.image"/>
+		<div class="info_title" (click)="mainFunction['openWorkout'](workout)">
+			<div class="white_title">{{workout.name}}</div>
+			<div class="grey_txt mar_t3">by {{workout.trainer_name}}</div>
+		</div> 
+		<div class="abs_like">
+			<div class="rel_circle">
+				<div class="width1per">
+				</div><div class="logo_text rest99per">OT</div>
+				<div class="circle_like">
+					<div class="width1per">
+					</div><div class="rest99per">{{workout.like}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</ion-scroll>
